@@ -9,7 +9,7 @@ import { SiIndeed } from "react-icons/si";
 const Footer = () => {
   return (
     <div className="bg-black text-white py-20 px-16 flex flex-col gap-14">
-      <div className="grid grid-cols-4">
+      <div className="grid md:grid-cols-3 md:gap-5 grid-cols-1 text-center text-xl md:text-base md:text-left lg:gap-0 lg:grid-cols-4 ">
         <div>
           <ul>
             <li>For Client</li>
@@ -61,8 +61,8 @@ const Footer = () => {
         </div>
       </div>
       <div>
-        <div className="flex justify-between">
-          <div className="flex items-center gap-5 ">
+        <div className="flex justify-between gap-5 md:gap-0 flex-col md:flex-row">
+          <div className="flex flex-col md:flex-row items-center gap-5 md:gap-2 lg:gap-5 ">
             <h1>Follow Us</h1>
             <div className="flex justify-between items-center gap-3">
               <div className=" p-4 rounded-full hover:bg-blue-700 hover:text-black border border-blue-700 flex items-center ">
@@ -83,7 +83,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="flex items-center gap-5">
+          <div className="flex items-center gap-5 flex-col md:flex-row">
             <h1>Mobile App</h1>
             <div className="flex justify-center items-center gap-2">
               <div className=" p-4 rounded-full hover:bg-blue-700 hover:text-black border border-blue-700 flex items-center ">
@@ -96,11 +96,11 @@ const Footer = () => {
           </div>
         </div>
         <hr className="my-5" />
-        <div className="flex justify-around">
-          <div>
+        <div className="flex justify-around flex-col lg:flex-row gap-5 ">
+          <div className="text-center">
             <p>© 2023-2025 My Job Global Inc.</p>
           </div>
-          <ul className="flex justify-evenly gap-4">
+          <ul className="grid grid-cols-2  md:flex justify-evenly gap-4">
             <li>Terms of Service</li>
             <li>Privacy Policy</li>
             <li>CA Notice at Collection</li>
