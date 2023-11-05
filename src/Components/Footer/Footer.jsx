@@ -1,7 +1,15 @@
+import { BsFacebook } from "react-icons/bs";
+import {
+  AiFillTwitterCircle,
+  AiFillLinkedin,
+  AiFillInstagram,
+} from "react-icons/ai";
+import { SiIndeed } from "react-icons/si";
+
 const Footer = () => {
   return (
-    <div>
-      <div>
+    <div className="bg-black text-white py-20 px-16 flex flex-col gap-14">
+      <div className="grid grid-cols-4">
         <div>
           <ul>
             <li>For Client</li>
@@ -53,19 +61,53 @@ const Footer = () => {
         </div>
       </div>
       <div>
-        <div></div>
-        <hr />
-        <div>
-            <div><p>&copy 2023-2025 My Job Global Inc.</p></div>
-            <ul>
-                <li>Terms of Service</li>
-                <li>Privacy Policy</li>
-                <li>CA Notice at Collection</li>
-                <li>Cookie Settings</li>
-                <li>Accessibility</li>
-            </ul>
-        </div>
+        <div className="flex justify-between">
+          <div className="flex items-center gap-5 ">
+            <h1>Follow Us</h1>
+            <div className="flex justify-between items-center gap-3">
+              <div className=" p-4 rounded-full hover:bg-blue-700 hover:text-black border border-blue-700 flex items-center ">
+                <AiFillLinkedin></AiFillLinkedin>
+              </div>
+              <div className=" p-4 rounded-full hover:bg-white hover:text-black border border-white flex items-center ">
+                <SiIndeed></SiIndeed>
+              </div>
+              <div className=" p-4 rounded-full hover:bg-blue-700 hover:text-black border border-blue-700 flex items-center ">
+                <BsFacebook></BsFacebook>
+              </div>
+              <div className=" p-4 rounded-full hover:bg-pink-700  border border-pink-600 flex items-center ">
+                <AiFillInstagram></AiFillInstagram>
+              </div>
 
+              <div className=" p-4 rounded-full hover:bg-sky-400 hover:text-black border border-sky-500 flex items-center ">
+                <AiFillTwitterCircle></AiFillTwitterCircle>
+              </div>
+            </div>
+          </div>
+          <div className="flex items-center gap-5">
+            <h1>Mobile App</h1>
+            <div className="flex justify-center items-center gap-2">
+              <div className=" p-4 rounded-full hover:bg-blue-700 hover:text-black border border-blue-700 flex items-center ">
+                <AiFillLinkedin></AiFillLinkedin>
+              </div>
+              <div className=" p-4 rounded-full hover:bg-white hover:text-black border border-white flex items-center ">
+                <SiIndeed></SiIndeed>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr className="my-5" />
+        <div className="flex justify-around">
+          <div>
+            <p>© 2023-2025 My Job Global Inc.</p>
+          </div>
+          <ul className="flex justify-evenly gap-4">
+            <li>Terms of Service</li>
+            <li>Privacy Policy</li>
+            <li>CA Notice at Collection</li>
+            <li>Cookie Settings</li>
+            <li>Accessibility</li>
+          </ul>
+        </div>
       </div>
     </div>
   );
