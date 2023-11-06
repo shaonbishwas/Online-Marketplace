@@ -1,0 +1,218 @@
+[
+  {
+    "title": "Front-end Developer",
+    "description": "We are seeking a skilled front-end developer to create interactive and responsive user interfaces for our web applications. Proficiency in HTML, CSS, JavaScript, and experience with React is required.",
+    "skillsRequired": ["HTML", "CSS", "JavaScript", "React"],
+    "budget": {
+      "type": "hourly",
+      "minAmount": 25,
+      "maxAmount": 50,
+      "currency": "USD"
+    },
+    "location": "Remote",
+    "availability": "Full-time",
+    "experienceLevel": "Intermediate",
+    "category": "Web Development",
+    "proposalsCount": 5,
+    "postedDate": "",
+    "expiryDate": ""
+  },
+  {
+    "title": "Back-end Developer",
+    "description": "We're in search of an experienced back-end developer to build and maintain server-side applications. Proficiency in Node.js, database management, and API development is essential.",
+    "skillsRequired": ["Node.js", "Database Management", "API Development"],
+    "budget": {
+      "type": "fixed-price",
+      "minAmount": 2000,
+      "maxAmount": 3000,
+      "currency": "USD"
+    },
+    "location": "Remote",
+    "availability": "Part-time",
+    "experienceLevel": "Advanced",
+    "category": "Web Development",
+    "proposalsCount": 7,
+    "postedDate": "",
+    "expiryDate": ""
+  },
+  {
+    "title": "Full-stack Developer",
+    "description": "We're looking for a full-stack developer to work on end-to-end development projects. Proficiency in both front-end and back-end technologies (e.g., React, Node.js) is required.",
+    "skillsRequired": ["React", "Node.js", "Full-stack Development"],
+    "budget": {
+      "type": "hourly",
+      "minAmount": 30,
+      "maxAmount": 60,
+      "currency": "USD"
+    },
+    "location": "Remote",
+    "availability": "Full-time",
+    "experienceLevel": "Advanced",
+    "category": "Web Development",
+    "proposalsCount": 8,
+    "postedDate": "",
+    "expiryDate": ""
+  },
+  {
+    "title": "Web Designer",
+    "description": "We are looking for a creative web designer to create visually appealing and user-friendly website layouts. Proficiency in design tools like Adobe XD and a strong portfolio of past work is required.",
+    "skillsRequired": ["Web Design", "Adobe XD", "UI/UX"],
+    "budget": {
+      "type": "fixed-price",
+      "minAmount": 1000,
+      "maxAmount": 1500,
+      "currency": "USD"
+    },
+    "location": "Remote",
+    "availability": "Part-time",
+    "experienceLevel": "Intermediate",
+    "category": "Web Development",
+    "proposalsCount": 6,
+    "postedDate": "",
+    "expiryDate": ""
+  },
+  {
+    "title": "Graphic Designer",
+    "description": "We are seeking a talented graphic designer to create visually appealing designs for various projects. Proficiency in Adobe Creative Suite and a strong portfolio of past design work is required.",
+    "skillsRequired": ["Adobe Creative Suite", "Graphic Design"],
+    "budget": {
+      "type": "hourly",
+      "minAmount": 20,
+      "maxAmount": 40,
+      "currency": "USD"
+    },
+    "location": "Remote",
+    "availability": "Part-time",
+    "experienceLevel": "Intermediate",
+    "category": "Graphics Design",
+    "proposalsCount": 5,
+    "postedDate": "",
+    "expiryDate": ""
+  },
+  {
+    "title": "Logo Designer",
+    "description": "We're looking for a logo designer to create unique and memorable logos for our clients. Proficiency in vector graphics software and a strong understanding of branding principles is essential.",
+    "skillsRequired": ["Logo Design", "Vector Graphics", "Branding"],
+    "budget": {
+      "type": "fixed-price",
+      "minAmount": 300,
+      "maxAmount": 500,
+      "currency": "USD"
+    },
+    "location": "Remote",
+    "availability": "Full-time",
+    "experienceLevel": "Advanced",
+    "category": "Graphics Design",
+    "proposalsCount": 7,
+    "postedDate": "",
+    "expiryDate": ""
+  },
+  {
+    "title": "UI/UX Designer",
+    "description": "We're in search of a UI/UX designer to create intuitive and user-friendly interfaces for our web and mobile applications. Proficiency in wireframing and prototyping tools is required.",
+    "skillsRequired": ["UI/UX Design", "Wireframing", "Prototyping"],
+    "budget": {
+      "type": "hourly",
+      "minAmount": 30,
+      "maxAmount": 60,
+      "currency": "USD"
+    },
+    "location": "Remote",
+    "availability": "Part-time",
+    "experienceLevel": "Intermediate",
+    "category": "Graphics Design",
+    "proposalsCount": 8,
+    "postedDate": "",
+    "expiryDate": ""
+  },
+  {
+    "title": "Print Designer",
+    "description": "We need a print designer to create visually appealing materials for print, including brochures, posters, and packaging. Proficiency in print design software and knowledge of print production is required.",
+    "skillsRequired": ["Print Design", "Print Production"],
+    "budget": {
+      "type": "fixed-price",
+      "minAmount": 500,
+      "maxAmount": 800,
+      "currency": "USD"
+    },
+    "location": "On-site (City Name)",
+    "availability": "Full-time",
+    "experienceLevel": "Advanced",
+    "category": "Graphics Design",
+    "proposalsCount": 6,
+    "postedDate": "",
+    "expiryDate": ""
+  },
+  {
+    "title": "Digital Marketing Specialist",
+    "description": "We are looking for a digital marketing specialist to develop and implement online marketing strategies. Proficiency in SEO, social media marketing, and content marketing is required.",
+    "skillsRequired": ["SEO", "Social Media Marketing", "Content Marketing"],
+    "budget": {
+      "type": "hourly",
+      "minAmount": 25,
+      "maxAmount": 50,
+      "currency": "USD"
+    },
+    "location": "Remote",
+    "availability": "Full-time",
+    "experienceLevel": "Intermediate",
+    "category": "Digital Marketing",
+    "proposalsCount": 5,
+    "postedDate": "",
+    "expiryDate": ""
+  },
+  {
+    "title": "Email Marketing Specialist",
+    "description": "We're seeking an email marketing specialist to create and manage email marketing campaigns. Proficiency in email marketing platforms and segmentation is essential.",
+    "skillsRequired": ["Email Marketing", "Segmentation"],
+    "budget": {
+      "type": "fixed-price",
+      "minAmount": 500,
+      "maxAmount": 800,
+      "currency": "USD"
+    },
+    "location": "Remote",
+    "availability": "Part-time",
+    "experienceLevel": "Advanced",
+    "category": "Digital Marketing",
+    "proposalsCount": 7,
+    "postedDate": "",
+    "expiryDate": ""
+  },
+  {
+    "title": "PPC Specialist",
+    "description": "We need a PPC specialist to manage pay-per-click advertising campaigns. Proficiency in Google Ads and Bing Ads is required.",
+    "skillsRequired": ["PPC", "Google Ads", "Bing Ads"],
+    "budget": {
+      "type": "hourly",
+      "minAmount": 30,
+      "maxAmount": 60,
+      "currency": "USD"
+    },
+    "location": "Remote",
+    "availability": "Full-time",
+    "experienceLevel": "Intermediate",
+    "category": "Digital Marketing",
+    "proposalsCount": 8,
+    "postedDate": "",
+    "expiryDate": ""
+  },
+  {
+    "title": "Social Media Manager",
+    "description": "We're looking for a social media manager to create and curate content for our social media channels. Proficiency in social media platforms and community management is required.",
+    "skillsRequired": ["Social Media Management", "Content Creation"],
+    "budget": {
+      "type": "fixed-price",
+      "minAmount": 800,
+      "maxAmount": 1200,
+      "currency": "USD"
+    },
+    "location": "Remote",
+    "availability": "Part-time",
+    "experienceLevel": "Intermediate",
+    "category": "Digital Marketing",
+    "proposalsCount": 6,
+    "postedDate": "",
+    "expiryDate": ""
+  }
+]
