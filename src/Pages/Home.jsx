@@ -13,22 +13,33 @@ const Home = () => {
     <div>
       <Tabs>
         <TabList>
-          <Tab>Title 1</Tab>
-          <Tab>Title 2</Tab>
+          <Tab>Web Development</Tab>
+          <Tab>Graphics Design</Tab>
+          <Tab>Digital Marketing</Tab>
         </TabList>
 
         <TabPanel>
-          <h2>Any content 1</h2>
-        </TabPanel>
-        <TabPanel>
-          <h2>Any content 2</h2>
-        </TabPanel>
-      </Tabs>
-      <div className="flex flex-col ">
+          <h2>Any content 11</h2>
+          <div className="flex flex-col ">
         {jobs?.map((job, index) => (
           <Job key={index} job={job}></Job>
         ))}
       </div>
+        </TabPanel>
+        <TabPanel>
+          <h2>Any content 2</h2>
+          <div className="flex flex-col ">
+        {jobs?.map((job, index) => (
+          <Job key={index} job={job}></Job>
+        ))}
+      </div>
+        </TabPanel>
+      </Tabs>
+      {/* <div className="flex flex-col ">
+        {jobs?.map((job, index) => (
+          <Job key={index} job={job}></Job>
+        ))}
+      </div> */}
     </div>
   );
 };
