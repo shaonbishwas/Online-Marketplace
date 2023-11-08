@@ -3,7 +3,7 @@ import useAuth from "../../Hooks/useAuth";
 import Swal from "sweetalert2";
 const Login = () => {
   const navigate = useNavigate();
-  const { login, setLoading } = useAuth();
+  const { login, setLoading, googleLogin } = useAuth();
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -12,7 +12,6 @@ const Login = () => {
 
     login(email, password)
       .then(() => {
-
         Swal.fire({
           title: "Success",
           text: "Successfully logged In",
@@ -23,15 +22,36 @@ const Login = () => {
         navigate("/");
       })
       .catch((error) => {
-        setLoading(false)
+        setLoading(false);
         Swal.fire({
-            title: "Error!",
-            text: `${error.message}`,
-            icon: "error",
-            confirmButtonText: "Try Again",
-          });
+          title: "Error!",
+          text: `${error.message}`,
+          icon: "error",
+          confirmButtonText: "Try Again",
+        });
       });
   };
+
+  const handleGoogleLogin = ()=>{
+    googleLogin()
+    .then(result => {
+      Swal.fire({
+        title: "Success",
+        text: `Successfully logged In with ${result.user.email}`,
+        icon: "success",
+        confirmButtonText: "Continue",
+      });
+      navigate("/");
+    })
+    .catch(error => {
+      Swal.fire({
+        title: "Error!",
+        text: `${error.message}`,
+        icon: "error",
+        confirmButtonText: "Try Again",
+      });
+    })
+  }
   return (
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col lg:flex-row-reverse">
@@ -79,7 +99,7 @@ const Login = () => {
               <h1>Or</h1>
               <hr className="border-1  w-full" />
             </div>
-            <button className="btn bg-[#4285f4] text-white rounded-full hover:text-black hover:border-[#4285f4]">
+            <button type="button" className="btn bg-[#4285f4] text-white rounded-full hover:text-black hover:border-[#4285f4]" onClick={handleGoogleLogin}>
               Continue with Google
             </button>
             <div className="flex justify-center items-center gap-2">

@@ -1,10 +1,32 @@
-import { Container } from "@mui/material";
+
 import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
-import useAuth from "../../Hooks/useAuth";
-
+// import useAuth from "../../Hooks/useAuth";
+import Swal from "sweetalert2";
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider/AuthProvider";
 const MainLayout = ({ children }) => {
-  const { user,logout } = useAuth();
+  const { user, logout } = useContext(AuthContext);
+  const hondleLogout = () => {
+    logout()
+      .then(() => {
+        window.location.reload()
+        // Swal.fire({
+        //   title: "Success",
+        //   text: "Successfully out",
+        //   icon: "success",
+        //   confirmButtonText: "Continue",
+        // });
+      })
+      .catch((error) => {
+        Swal.fire({
+          title: "Error!",
+          text: `${error.message}`,
+          icon: "error",
+          confirmButtonText: "Try Again",
+        });
+      });
+  };
   const links = (
     <>
       <NavLink to="/">Home</NavLink>
@@ -12,8 +34,8 @@ const MainLayout = ({ children }) => {
       <NavLink to="addjob">Add Job</NavLink>
       <NavLink to="mybids">My Bids</NavLink>
       <NavLink to="bidrequests">Bid Requests</NavLink>
-      {user ? (
-        <NavLink onClick={()=>logout()}>logOut</NavLink>
+      {user?.email ? (
+        <NavLink onClick={hondleLogout}>logOut</NavLink>
       ) : (
         <NavLink to="login">logIn</NavLink>
       )}
@@ -25,7 +47,7 @@ const MainLayout = ({ children }) => {
       <div className="drawer-content flex flex-col">
         {/* Navbar */}
         <div className="bg-base-300">
-          <div className="w-full navbar bg-base-300 md:max-w-[1200px] mx-auto ">
+          <div className="w-full navbar bg-base-300 md:max-w-[1400px] mx-auto ">
             <div className="flex-none lg:hidden">
               <label
                 htmlFor="my-drawer-3"
@@ -57,7 +79,7 @@ const MainLayout = ({ children }) => {
           </div>
         </div>
         {/* Page content here */}
-        <Container className="">{children}</Container>
+        {children}
       </div>
       <div className="drawer-side">
         <label

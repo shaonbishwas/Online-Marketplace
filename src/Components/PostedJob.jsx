@@ -1,10 +1,3 @@
-import * as React from "react";
-import Box from "@mui/material/Box";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
 import PropTypes from "prop-types";
 
 export default function PostedJob({ job }) {
@@ -19,47 +12,36 @@ export default function PostedJob({ job }) {
     expiryDate,
   } = job;
   return (
-    <Box sx={{ minWidth: 275 }} className="">
-      <Card variant="outlined">
-        <React.Fragment>
-          <CardContent>
-            <Typography
-              sx={{ fontSize: 14 }}
-              color="text.secondary"
-              gutterBottom
-            >
-              {category}
-            </Typography>
-            <Typography variant="h5" component="div">
-              {title}
-            </Typography>
-            <Typography sx={{ mb: 1.5 }} color="text.secondary">
-              Job Owner : {ownerEmail}
-            </Typography>
-            <div className="flex gap-3">
-              <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                <p className="text-sm">Price Range</p> ${minimumPrice}-$
-                {maximumPrice}
-              </Typography>
-              <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                <p className="text-sm">Posted Date</p> {postedDate}
-              </Typography>
-              <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                <p className="text-sm">DeadLine</p> {expiryDate}
-              </Typography>
+    <>
+      <div>
+        <div className="border-2 rounded-sm p-5 space-y-2">
+          <p>{category}</p>
+          <h1 className="text-4xl  font-bold text-gray-400 ">{title}</h1>
+          <p className="text-sm">Job Owner : {ownerEmail}</p>
+          <div className="flex gap-5">
+            <div>
+              <p className="text-sm">Price Range</p>
+              <p className="text-lg">
+                ${minimumPrice} - ${maximumPrice}
+              </p>
             </div>
-            <Typography variant="body2">
-              {description.slice(0, 100)}...
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Button size="large"  >
-              Update
-            </Button>
-          </CardActions>
-        </React.Fragment>
-      </Card>
-    </Box>
+            <div>
+              <p className="text-sm">Posted Date</p>
+              <p className="text-lg">{postedDate}</p>
+            </div>
+            <div>
+              <p className="text-sm">Deadline</p>
+              <p className="text-lg">{expiryDate}</p>
+            </div>
+          </div>
+          <p>{description.slice(0, 100)}..</p>
+          <div className="flex gap-5 md:w-1/2 py-2">
+            <button className="font-semibold text-green-500">UPDATE</button>
+            <button className="font-semibold text-red-500">DELETE</button>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
 PostedJob.propTypes = {

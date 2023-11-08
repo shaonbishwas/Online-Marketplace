@@ -17,14 +17,14 @@ const Home = () => {
   }, [category]);
   return (
     <div>
-      <div className="relative h-screen">
+      <div className="relative h-screen ">
         <img src={banner} alt="" className="h-full w-full" />
-        <div className="absolute top-0 bg-[#000000a8] text-white h-full w-full">
-          <div className="w-1/2 flex flex-col justify-center h-full ml-10 space-y-4">
+        <div className="absolute top-0 bg-[#000000a8] text-white h-full w-full ">
+          <div className="w-1/2 flex flex-col justify-center h-full ml-10 space-y-4 ">
             <h1 className="text-6xl mb-5 font-bold">
               Chose the Right Job, Right Pathway
             </h1>
-            <div>
+            <div className="ml-3">
               <input
                 type="text"
                 placeholder="Search any Job...."
@@ -47,44 +47,9 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="h-screen relative">
-        <img src={banner2} alt="" className="h-full w-full" />
-        <div className="absolute bg-[#000000a5]  h-full w-full top-0 text-white flex p-10">
-          <div className="w-1/2 flex flex-col justify-center">
-            <h1 className="text-8xl font-bold">Find talent your way</h1>
-            <p className="mt-8 text-lg font-semibold">
-              Work with the largest network of independent professionals and get
-              things done—from quick turnarounds to big transformations.
-            </p>
-          </div>
-          <div className="w-1/2 flex flex-col  items-center">
-            <div className="bg-[#14a800] p-5 rounded-lg w-[430px] space-y-6 my-auto cursor-pointer hover:bg-white hover:text-[#14a800]">
-              <h1 className="text-4xl font-semibold">
-                Post a job and hire a pro
-              </h1>
-              <p className="text-lg font-semibold font-sans">
-                Talent Marketplace -
-              </p>
-            </div>
-            <div className="bg-[#14a800] p-5 rounded-lg w-[430px] space-y-6 my-auto cursor-pointer hover:text-[#14a800] hover:bg-white">
-              <h1 className="text-4xl font-semibold">
-                Browse and buy projects
-              </h1>
-              <p className="text-lg font-semibold font-sans">
-                Project Catalog -
-              </p>
-            </div>
-            <div className="bg-[#14a800] p-5 rounded-lg w-[430px] space-y-6 my-auto cursor-pointer hover:text-[#14a800] hover:bg-white">
-              <h1 className="text-4xl font-semibold">
-                Get advice from an <br /> industry expert
-              </h1>
-              <p className="text-lg font-semibold font-sans">Consultations</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <Tabs>
+      <h1 className="text-center text-6xl font-bold text-black my-20">Our Listed Jobs</h1>
+      <Tabs className='md:max-w-[1400px] mx-auto'>
+        
         <TabList>
           <Tab onClick={() => setCategory("")}>All</Tab>
           <Tab onClick={() => setCategory("Web Development")}>
@@ -127,11 +92,48 @@ const Home = () => {
           </div>
         </TabPanel>
       </Tabs>
-      {/* <div className="flex flex-col ">
-        {jobs?.map((job, index) => (
-          <Job key={index} job={job}></Job>
-        ))}
-      </div> */}
+
+
+      
+      <div className="h-screen relative mt-20">
+        <img src={banner2} alt="" className="h-full w-full" />
+        <div className="absolute bg-[#000000a5]  h-full w-full top-0 text-white ">
+          <div className="flex p-10 h-full md:max-w-[1400px] mx-auto">
+          <div className="w-1/2 flex flex-col justify-center">
+            <h1 className="text-8xl font-bold">Find talent your way</h1>
+            <p className="mt-8 text-lg font-semibold">
+              Work with the largest network of independent professionals and get
+              things done—from quick turnarounds to big transformations.
+            </p>
+          </div>
+          <div className="w-1/2 flex flex-col  items-center">
+            <div className="bg-[#14a800] p-5 rounded-lg w-[430px] space-y-6 my-auto cursor-pointer hover:bg-white hover:text-[#14a800]">
+              <h1 className="text-4xl font-semibold">
+                Post a job and hire a pro
+              </h1>
+              <p className="text-lg font-semibold font-sans">
+                Talent Marketplace -
+              </p>
+            </div>
+            <div className="bg-[#14a800] p-5 rounded-lg w-[430px] space-y-6 my-auto cursor-pointer hover:text-[#14a800] hover:bg-white">
+              <h1 className="text-4xl font-semibold">
+                Browse and buy projects
+              </h1>
+              <p className="text-lg font-semibold font-sans">
+                Project Catalog -
+              </p>
+            </div>
+            <div className="bg-[#14a800] p-5 rounded-lg w-[430px] space-y-6 my-auto cursor-pointer hover:text-[#14a800] hover:bg-white">
+              <h1 className="text-4xl font-semibold">
+                Get advice from an <br /> industry expert
+              </h1>
+              <p className="text-lg font-semibold font-sans">Consultations</p>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   );
 };

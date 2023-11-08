@@ -14,7 +14,7 @@ const MyPostedJobs = () => {
       .then((res) => setJobs(res.data));
   }, [user.email]);
   return (
-    <div className="grid grid-cols-2 gap-5 my-10">
+    <div className="grid grid-cols-2 gap-10 my-20 md:max-w-[1400px] mx-auto">
       {jobs?.map((job) => (
         <PostedJob key={job._id} job={job}></PostedJob>
       ))}
