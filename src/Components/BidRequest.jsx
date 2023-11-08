@@ -1,6 +1,7 @@
 import axios from "axios";
 import PropTypes from "prop-types";
 import { useState } from "react";
+import Progressbar from "./Progressbar";
 
 const BidRequest = ({ bid }) => {
   const [status, setStatus] = useState(bid.status);
@@ -46,6 +47,10 @@ const BidRequest = ({ bid }) => {
         onClick={handleReject}
       >
         Rejected
+      </td>
+      <td className={status === "in progress" ? "w-20" : "hidden"}>
+
+      <Progressbar ></Progressbar>
       </td>
     </tr>
   );
