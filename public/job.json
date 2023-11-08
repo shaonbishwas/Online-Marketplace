@@ -1,38 +1,12 @@
 [
   {
-    "id": 1,
     "title": "Front-end Web Developer",
-    "deadline": "2023-12-01",
-    "postedDate": "2023-11-21",
-    "description": "We are looking for a skilled front-end web developer to create a responsive and visually appealing website for our business. The project involves HTML, CSS, and JavaScript development.",
-    "minimum_price": 500,
-    "maximum_price": 1000,
-    "category": "Web Development",
-    "buyer_email": "shaonbishwas01@gmail.com",
-    "status": ""
-  },
-  {
-    "id": 2,
-    "title": "Digital Marketing Specialist",
-    "deadline": "2023-11-30",
-    "postedDate": "2023-11-19",
-    "description": "We need a digital marketing expert to run online advertising campaigns, manage social media accounts, and optimize our website for SEO. Proven experience in digital marketing is a must.",
-    "minimum_price": 800,
-    "maximum_price": 1500,
-    "category": "Digital Marketing",
-    "buyer_email": "shaonbishwas01@gmail.com",
-    "status": ""
-  },
-  {
-    "id": 3,
-    "title": "Graphics Designer for Brand Logo",
-    "deadline": "2023-12-10",
-    "postedDate": "2023-11-21",
-    "description": "We are seeking a talented graphics designer to create a unique and memorable logo for our new brand. The logo should reflect our brand identity and values.",
-    "minimum_price": 200,
-    "maximum_price": 400,
-    "category": "Graphics",
-    "buyer_email": "shaonbishwas01@gmail.com",
-    "status": ""
+    "job_id": "",
+    "price" : 0,
+    "deadline": "",
+    "postedDate": "",
+    "buyer_email": "",
+    "owner_email": "",
+    "status": "pending"
   }
 ]

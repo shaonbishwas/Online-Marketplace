@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 const Register = () => {
     
   const navigate = useNavigate();
-    const {createUser} = useAuth()
+    const {createUser,setLoading} = useAuth()
     const handleSubmit = (e)=>{
         e.preventDefault();
         const form = e.target;
@@ -22,6 +22,7 @@ const Register = () => {
         navigate("/");
       })
       .catch((error) => {
+        setLoading(false)
         Swal.fire({
             title: "Error!",
             text: `${error.message}`,

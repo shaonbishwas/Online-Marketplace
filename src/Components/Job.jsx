@@ -1,17 +1,16 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-const Job = (props) => {
+const Job = ({job}) => {
   const {
-    id,
+    _id,
     title,
-    deadline,
+    expiryDate,
     postedDate,
     description,
     minimum_price,
     maximum_price,
-  } = props.job;
-  console.log(props);
+  } = job;
   return (
     <div className="space-y-3 border p-10">
       <h1 className="text-2xl font-semibold mb-2">{title}</h1>
@@ -23,22 +22,20 @@ const Job = (props) => {
           Posted : {postedDate}
         </span>
         <span className="text-sm bg-gray-200 rounded-full px-3">
-          DeadLine : {deadline}
+          Deadline : {expiryDate}
         </span>
       </div>
       <p>{description}</p>
       <Link
         className="btn bg-[#14a800] text-white rounded-full  hover:text-black hover:border-[#14a800]"
-        to={`/jobdetails/${id}`}
+        to={`/jobdetails/${_id}`}
       >
         Bid Now
       </Link>
     </div>
   );
 };
-
 Job.propTypes = {
-  props: PropTypes.object,
   job: PropTypes.object,
 };
 

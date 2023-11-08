@@ -25,12 +25,13 @@ const AuthProvider = ({ children }) => {
     return signOut(auth);
   };
   useEffect(() => {
+    
     const unSubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);
         setLoading(false)
       } else {
-        setUser(null);
+        // setUser(null);
       }
     });
     return () => unSubscribe();

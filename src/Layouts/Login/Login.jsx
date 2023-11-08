@@ -3,7 +3,7 @@ import useAuth from "../../Hooks/useAuth";
 import Swal from "sweetalert2";
 const Login = () => {
   const navigate = useNavigate();
-  const { login } = useAuth();
+  const { login, setLoading } = useAuth();
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -12,15 +12,18 @@ const Login = () => {
 
     login(email, password)
       .then(() => {
+
         Swal.fire({
           title: "Success",
           text: "Successfully logged In",
           icon: "success",
           confirmButtonText: "Continue",
         });
+
         navigate("/");
       })
       .catch((error) => {
+        setLoading(false)
         Swal.fire({
             title: "Error!",
             text: `${error.message}`,
