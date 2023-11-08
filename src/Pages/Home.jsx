@@ -19,8 +19,7 @@ const Home = () => {
   }, [category]);
   return (
     <div>
-      <div>d</div>
-      <h1>hel</h1>
+      <h1>dfd</h1>
       <div className="relative  h-screen ">
         <img src={banner} alt="" className="h-full w-full" />
         <div className="absolute top-0 bg-[#000000a8] text-white h-full w-full ">
