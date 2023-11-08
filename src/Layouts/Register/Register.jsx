@@ -95,14 +95,7 @@ const Register = () => {
                     Register
                   </button>
                 </div>
-                <div className="flex justify-center items-center gap-2">
-                  <hr className="border-1  w-full" />
-                  <h1>Or</h1>
-                  <hr className="border-1  w-full" />
-                </div>
-                <button className="btn bg-[#4285f4] text-white rounded-full hover:text-black hover:border-[#4285f4]">
-                 Continue with Google
-                </button>
+                
                 <div className="flex justify-center items-center gap-2">
                   <h1 className="">have an  account?</h1>
                 </div>

@@ -24,7 +24,7 @@ const Home = () => {
         <div className="absolute top-0 bg-[#000000a8] text-white h-full w-full ">
           <div className="w-1/2 flex flex-col justify-center h-full ml-10 space-y-4 ">
             <h1 className="text-6xl mb-5 font-bold">
-              Chose the Right Job, Right Pathway
+              Chose the Right Job, Right Pathway, be silent
             </h1>
             <div className="ml-3">
               <input

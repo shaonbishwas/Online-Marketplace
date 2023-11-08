@@ -1,18 +1,23 @@
-import { BsFacebook } from "react-icons/bs";
+import { BsFacebook,BsAndroid2 } from "react-icons/bs";
 import {
   AiFillTwitterCircle,
   AiFillLinkedin,
   AiFillInstagram,
+  AiFillApple
 } from "react-icons/ai";
 import { SiIndeed } from "react-icons/si";
 
 const Footer = () => {
   return (
     <div className="bg-black text-white py-20 px-16 flex flex-col gap-14">
+      <div className="md:max-w-[1400px] mx-auto w-full">
+      <div className="text-2xl mb-10">
+          <span className="font-bold text-4xl text-green-400">W</span>orknest
+        </div>
       <div className="grid md:grid-cols-3 md:gap-5 grid-cols-1 text-center text-xl md:text-base md:text-left lg:gap-0 lg:grid-cols-4 ">
-        <div>
+        
+        <div className="">
           <ul>
-            <img src="" alt="" />
             <li>For Client</li>
             <li>How to Hire</li>
             <li>Talent Marketplace</li>
@@ -86,10 +91,10 @@ const Footer = () => {
             <h1>Mobile App</h1>
             <div className="flex justify-center items-center gap-2">
               <div className=" p-4 rounded-full hover:bg-blue-700 hover:text-black border border-blue-700 flex items-center ">
-                <AiFillLinkedin></AiFillLinkedin>
+                <AiFillApple></AiFillApple>
               </div>
               <div className=" p-4 rounded-full hover:bg-white hover:text-black border border-white flex items-center ">
-                <SiIndeed></SiIndeed>
+                <BsAndroid2></BsAndroid2>
               </div>
             </div>
           </div>
@@ -107,6 +112,7 @@ const Footer = () => {
             <li>Accessibility</li>
           </ul>
         </div>
+      </div>
       </div>
     </div>
   );

@@ -1,8 +1,8 @@
 import axios from "axios";
-import { useLoaderData,useNavigate } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 const UpdatePage = () => {
-    const navigate = useNavigate()
+  const navigate = useNavigate();
   const job = useLoaderData();
   const {
     _id,
@@ -24,25 +24,29 @@ const UpdatePage = () => {
     const minimumPrice = parseInt(form.minimum.value);
     const maximumPrice = parseInt(form.maximum.value);
     const job = {
-        title,
-        description,
-        ownerEmail,
-        category,
-        expiryDate,
-        minimumPrice,
-        maximumPrice,
-      };
+      title,
+      description,
+      ownerEmail,
+      category,
+      expiryDate,
+      minimumPrice,
+      maximumPrice,
+    };
     //   console.log(job)
-    axios.put(`http://localhost:5000/api/v1/update-job/${_id}`,job)
-    .then(()=>{
+    axios
+      .put(
+        `https://online-marketplace-zeta.vercel.app/api/v1/update-job/${_id}`,
+        job
+      )
+      .then(() => {
         Swal.fire({
-            title: "Success!",
-            text: `Successfully Updated`,
-            icon: "success",
-            confirmButtonText: "Cool",
-          });
-          navigate("/mypostedjobs");
-    })
+          title: "Success!",
+          text: `Successfully Updated`,
+          icon: "success",
+          confirmButtonText: "Cool",
+        });
+        navigate("/mypostedjobs");
+      });
   };
   return (
     <div className="my-16">

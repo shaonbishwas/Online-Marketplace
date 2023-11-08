@@ -1,8 +1,13 @@
-# React + Vite
+# Worknest
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+About This website
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- any user can post jobs
+- any user can bid in jobs of deferent user
+- you can check your bids in a table format 
+- you can check bid requests of your jobs
+- you can reject or accept bid requests of your job
+- you can update or delete of your jobs 
+
+- live link : [https://online-marketplace-70c71.web.app]
