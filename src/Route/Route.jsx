@@ -9,6 +9,7 @@ import BidRequests from "../Pages/BidRequests";
 import AddJob from "../Pages/AddJob";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import JobDetails from "../Components/JobDetails";
+import UpdateJob from "../Components/updateJob";
 
 const router = createBrowserRouter([
   {
@@ -63,6 +64,15 @@ const router = createBrowserRouter([
             `https://online-marketplace-zeta.vercel.app/api/v1/jobs/${params.id}`
           ),
       },
+      {
+        path:'updatejob/:id',
+        element:<UpdateJob></UpdateJob>,
+        loader:({ params }) =>
+        fetch(
+          `https://online-marketplace-zeta.vercel.app/api/v1/jobs/${params.id}`
+        ),
+
+      }
     ],
   },
   {

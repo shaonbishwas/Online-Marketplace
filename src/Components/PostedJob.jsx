@@ -1,7 +1,10 @@
+import axios from "axios";
 import PropTypes from "prop-types";
-
+import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 export default function PostedJob({ job }) {
   const {
+    _id,
     title,
     category,
     description,
@@ -11,6 +14,19 @@ export default function PostedJob({ job }) {
     postedDate,
     expiryDate,
   } = job;
+  const handleDelete =()=>{
+    axios.delete(`http://localhost:5000/api/v1/delete-job/${_id}`)
+    .then(() => {
+      window.location.reload()
+      Swal.fire({
+        title: "Success",
+        text: "Successfully deleted",
+        icon: "success",
+        confirmButtonText: "Continue",
+      });
+      
+    })
+  }
   return (
     <>
       <div>
@@ -36,8 +52,8 @@ export default function PostedJob({ job }) {
           </div>
           <p>{description.slice(0, 100)}..</p>
           <div className="flex gap-5 md:w-1/2 py-2">
-            <button className="font-semibold text-green-500">UPDATE</button>
-            <button className="font-semibold text-red-500">DELETE</button>
+            <Link to={`/updatejob/${_id}`} className="font-semibold text-green-500" >UPDATE</Link>
+            <button className="font-semibold text-red-500" onClick={handleDelete}>DELETE</button>
           </div>
         </div>
       </div>
