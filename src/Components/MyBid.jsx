@@ -1,9 +1,15 @@
+import axios from "axios";
 import PropTypes from "prop-types";
 import { useState } from "react";
 
 const MyBid = ({ bid }) => {
   const [status, setStatus]= useState(bid.status)
   const handleComplete = () => {
+    axios
+      .put(
+        `https://online-marketplace-zeta.vercel.app/api/v1/status-update/${bid._id}?status=complete`
+      )
+      .then((res) => console.log(res.data));
     setStatus('complete')
     console.log("hi from complete");
   };

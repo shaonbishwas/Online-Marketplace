@@ -9,16 +9,19 @@ import BidRequests from "../Pages/BidRequests";
 import AddJob from "../Pages/AddJob";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import JobDetails from "../Components/JobDetails";
-import UpdateJob from "../Components/updateJob";
+import UpdatePage from "../Components/UpdatePage";
+import ErrorElement from "../Pages/ErrorElement";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
+    errorElement:<ErrorElement></ErrorElement>,
     children: [
       {
         path: "/",
         element: <Home></Home>,
+        errorElement:<ErrorElement></ErrorElement>
       },
       {
         path: "mypostedjobs",
@@ -27,6 +30,7 @@ const router = createBrowserRouter([
             <MyPostedJobs></MyPostedJobs>
           </PrivateRoute>
         ),
+        errorElement:<ErrorElement></ErrorElement>
       },
       {
         path: "mybids",
@@ -35,6 +39,7 @@ const router = createBrowserRouter([
             <MyBids></MyBids>
           </PrivateRoute>
         ),
+        errorElement:<ErrorElement></ErrorElement>
       },
       {
         path: "bidrequests",
@@ -43,6 +48,7 @@ const router = createBrowserRouter([
             <BidRequests></BidRequests>
           </PrivateRoute>
         ),
+        errorElement:<ErrorElement></ErrorElement>
       },
       {
         path: "addjob",
@@ -51,6 +57,7 @@ const router = createBrowserRouter([
             <AddJob></AddJob>
           </PrivateRoute>
         ),
+        errorElement:<ErrorElement></ErrorElement>
       },
       {
         path: "jobdetails/:id",
@@ -59,29 +66,36 @@ const router = createBrowserRouter([
             <JobDetails></JobDetails>
           </PrivateRoute>
         ),
+        errorElement:<ErrorElement></ErrorElement>,
         loader: ({ params }) =>
           fetch(
-            `https://online-marketplace-zeta.vercel.app/api/v1/jobs/${params.id}`
+            `http://localhost:5000/api/v1/jobs/${params.id}`
           ),
       },
       {
-        path:'updatejob/:id',
-        element:<UpdateJob></UpdateJob>,
-        loader:({ params }) =>
-        fetch(
-          `https://online-marketplace-zeta.vercel.app/api/v1/jobs/${params.id}`
+        path: "updatejob/:id",
+        element: (
+          <PrivateRoute>
+            <UpdatePage></UpdatePage>
+          </PrivateRoute>
         ),
-
-      }
+        errorElement:<ErrorElement></ErrorElement>,
+        loader: ({ params }) =>
+          fetch(
+            `http://localhost:5000/api/v1/jobs/${params.id}`
+          ),
+      },
     ],
   },
   {
     path: "/login",
     element: <Login></Login>,
+    errorElement:<ErrorElement></ErrorElement>
   },
   {
     path: "/register",
     element: <Register></Register>,
+    errorElement:<ErrorElement></ErrorElement>
   },
 ]);
 export default router;
