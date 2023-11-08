@@ -12,13 +12,12 @@ const Footer = () => {
       <div className="grid md:grid-cols-3 md:gap-5 grid-cols-1 text-center text-xl md:text-base md:text-left lg:gap-0 lg:grid-cols-4 ">
         <div>
           <ul>
+            <img src="" alt="" />
             <li>For Client</li>
             <li>How to Hire</li>
             <li>Talent Marketplace</li>
             <li>Project Catalog</li>
             <li>Hire and Agency</li>
-            <li>Enterprise</li>
-            <li>Any Hire</li>
             <li>Contract-to-Hire</li>
             <li>Direct Contracts</li>
             <li>Hire Woldwide</li>
