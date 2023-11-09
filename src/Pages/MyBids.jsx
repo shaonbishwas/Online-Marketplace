@@ -26,7 +26,14 @@ const MyBids = () => {
   const handleSelectChange = (event) => {
     setSortmethod(event.target.value);
   };
-  console.log(sortMethod)
+  // console.log(sortMethod)
+  if (bids.length === 0) {
+    return (
+      <div className="flex justify-center items-center min-h-[400px]">
+        <span className="text-2xl font-bold text-gray-400"> No Bids Available</span>
+      </div>
+    );
+  }
   return (
     <>
       <div className="md:w-[90%] lg:max-w-[1400px] mx-auto flex gap-5">

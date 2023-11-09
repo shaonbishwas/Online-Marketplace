@@ -30,25 +30,28 @@ const AuthProvider = ({ children }) => {
     return signOut(auth);
   };
   const googleLogin = () => {
+    setLoading(true)
     return signInWithPopup(auth, provider);
   };
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        setUser(user);
-        setLoading(false);
-        console.log(user);
-        // axios.post(
-        //   "http://localhost:5000/jwt",
-        //   { email: user.email },
-        //   { withCredentials: true }
-        // );
-      } else {
-        setUser(null);
-        // axios.get("http://localhost:5000/deletecookie", {
-        //   withCredentials: true,
-        // });
-      }
+      setUser(user)
+      setLoading(false)
+      // if (user) {
+      //   setUser(user);
+      //   setLoading(false);
+      //   console.log(user);
+      //   // axios.post(
+      //   //   "http://localhost:5000/jwt",
+      //   //   { email: user.email },
+      //   //   { withCredentials: true }
+      //   // );
+      // } else {
+      //   setUser(null);
+      //   // axios.get("http://localhost:5000/deletecookie", {
+      //   //   withCredentials: true,
+      //   // });
+      // }
     });
     return () => unsubscribe();
   }, []);

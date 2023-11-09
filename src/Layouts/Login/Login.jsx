@@ -53,6 +53,7 @@ const Login = () => {
       navigate("/");
     })
     .catch(error => {
+      setLoading(false);
       Swal.fire({
         title: "Error!",
         text: `${error.message}`,

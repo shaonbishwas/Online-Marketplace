@@ -9,7 +9,7 @@ import { SiIndeed } from "react-icons/si";
 
 const Footer = () => {
   return (
-    <div className="bg-black text-white py-20 px-16 flex flex-col gap-14">
+    <div className="bg-black text-white py-20 px-16 flex flex-col gap-14 ">
       <div className="md:max-w-[1400px] mx-auto w-full">
       <div className="text-2xl mb-10">
           <span className="font-bold text-4xl text-green-400">W</span>orknest

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import Job from "../Components/Job";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
@@ -17,16 +18,26 @@ const Home = () => {
     document.title = "Worknest | Home";
   }, [category]);
   // console.log(import.meta.env.VITE_APIKEY)
-  
+
   return (
-    <div>
+    <div className="">
       <div className="relative  h-screen ">
-        <img src={banner} alt="" className="h-full w-full" />
+        <img src={banner} alt="" className="h-full w-full " />
         <div className="absolute top-0 bg-[#0000006b] text-white h-full w-full">
-          <div className="lg:w-1/2 flex flex-col justify-center h-full ml-10 space-y-4 w-full ">
-            <h1 className="text-3xl md:text-6xl mb-5 font-bold">
-              Chose the Right Job, Right Pathway, be silent
-            </h1>
+          <div className="lg:w-1/2 flex flex-col justify-center h-full p-5  lg:ml-10 space-y-4 w-full ">
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ rotate: 0, scale: 1 }}
+              transition={{
+                type: "spring",
+                stiffness: 260,
+                damping: 20,
+              }}
+            >
+              <h1 className="text-3xl md:text-3xl lg:text-6xl mb-5 font-bold">
+                Chose the Right Job, Right Pathway, be silent
+              </h1>
+            </motion.div>
             <div className="ml-3">
               <input
                 type="text"
@@ -37,15 +48,25 @@ const Home = () => {
             </div>
             <div>
               <p className="text-xl mb-2">Categories :</p>
-              <span className="border-2 rounded-full px-2">
-                Web Development
-              </span>
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ rotate: 0, scale: 1 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 260,
+                  damping: 20,
+                }}
+              >
+                <span className="border-2 rounded-full px-2">
+                  Web Development
+                </span>
               <span className="border-2 rounded-full px-2">
                 Graphics Design
               </span>
               <span className="border-2 rounded-full px-2">
                 Digital Marketing
               </span>
+              </motion.div>
             </div>
           </div>
         </div>
@@ -53,7 +74,7 @@ const Home = () => {
       <h1 className="text-center text-6xl font-bold text-black my-20">
         Our Listed Jobs
       </h1>
-      <Tabs className="md:max-w-[1400px] mx-auto">
+      <Tabs className="lg:max-w-[1400px] mx-auto">
         <TabList>
           <Tab onClick={() => setCategory("")}>All</Tab>
           <Tab onClick={() => setCategory("Web Development")}>
@@ -102,7 +123,9 @@ const Home = () => {
         <div className="lg:absolute  bg-[#000000a5]  h-full w-full top-0 text-white ">
           <div className="flex flex-col md:flex-row p-10 h-full lg:max-w-[1400px] mx-auto">
             <div className="lg:w-1/2 w-full flex flex-col justify-center">
-              <h1 className="text-4xl md:text-8xl font-bold">Find talent your way</h1>
+              <h1 className="text-4xl md:text-8xl font-bold">
+                Find talent your way
+              </h1>
               <p className="mt-8 text-lg font-semibold">
                 Work with the largest network of independent professionals and
                 get things done—from quick turnarounds to big transformations.
@@ -129,7 +152,9 @@ const Home = () => {
                 <h1 className="text-4xl font-semibold">
                   Get advice from an <br /> industry expert
                 </h1>
-                <p className="text-lg font-semibold font-sans">Consultations</p>
+                <p className="text-lg font-semibold font-sans">
+                  Consultations -
+                </p>
               </div>
             </div>
           </div>
@@ -138,7 +163,7 @@ const Home = () => {
 
       <div className="bg-[#f7f7f7] text-center pb-28 pt-20">
         <h1 className="mb-20 text-5xl font-bold">How it Works</h1>
-        <div className="flex flex-col lg:flex-row md:max-w-[1400px] mx-auto gap-20">
+        <div className="flex flex-col lg:flex-row lg:max-w-[1400px] mx-auto gap-20">
           <div className="flex flex-col items-center space-y-2">
             <IoReaderOutline className="text-7xl"></IoReaderOutline>
             <h1 className="text-3xl font-semibold">1. Create a Bid</h1>

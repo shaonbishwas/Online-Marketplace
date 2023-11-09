@@ -7,7 +7,7 @@ const MyPostedJobs = () => {
   const { user } = useAuth();
 
   useEffect(() => {
-    document.title = "Worknest | My posted jobs"
+    document.title = "Worknest | My posted jobs";
     axios
       .get(`http://localhost:5000/api/v1/all-jobs?email=${user.email}`)
       .then((res) => setJobs(res.data));
@@ -16,6 +16,13 @@ const MyPostedJobs = () => {
     return (
       <div className="flex justify-center items-center min-h-[400px]">
         <span className="loading loading-infinity loading-lg"></span>
+      </div>
+    );
+  }
+  if (jobs.length === 0) {
+    return (
+      <div className="flex justify-center items-center min-h-[400px]">
+        <span className="text-2xl font-bold text-gray-400"> No Jobs Available</span>
       </div>
     );
   }

@@ -15,7 +15,14 @@ const BidRequests = () => {
   if (!requests) {
     return (
       <div className="flex justify-center items-center min-h-[400px]">
-        <span className="loading loading-infinity loading-lg"></span>
+        <span className="loading loading-infinity loading-lg "></span>
+      </div>
+    );
+  }
+  if (requests.length === 0) {
+    return (
+      <div className="flex justify-center items-center min-h-[400px]">
+        <span className="text-2xl font-bold text-gray-400 "> No Requests Available</span>
       </div>
     );
   }
