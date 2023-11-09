@@ -9,6 +9,8 @@ import {
   signOut,
 } from "firebase/auth";
 import { auth } from "../../../firebase/firebase.init";
+// import axios from "axios";
+// import axios from "axios";
 export const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
@@ -35,13 +37,20 @@ const AuthProvider = ({ children }) => {
       if (user) {
         setUser(user);
         setLoading(false);
+        console.log(user);
+        // axios.post(
+        //   "http://localhost:5000/jwt",
+        //   { email: user.email },
+        //   { withCredentials: true }
+        // );
       } else {
-        // setUser(null);
+        setUser(null);
+        // axios.get("http://localhost:5000/deletecookie", {
+        //   withCredentials: true,
+        // });
       }
     });
-    return () => {
-      unsubscribe();
-    };
+    return () => unsubscribe();
   }, []);
   const values = {
     googleLogin,

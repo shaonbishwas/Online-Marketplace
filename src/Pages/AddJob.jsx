@@ -2,10 +2,14 @@ import axios from "axios";
 import useAuth from "../Hooks/useAuth";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import { useEffect } from "react";
 
 const AddJob = () => {
   const navigate = useNavigate();
   const { user } = useAuth();
+  useEffect(()=>{
+    document.title = 'Worknest | Add Job'
+  },[])
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -33,7 +37,7 @@ const AddJob = () => {
       proposalsCount: 0,
     };
     axios
-      .post("https://online-marketplace-zeta.vercel.app/api/v1/add-job", job)
+      .post("http://localhost:5000/api/v1/add-job", job)
       .then(() => {
         Swal.fire({
           title: "Success!",
@@ -48,8 +52,8 @@ const AddJob = () => {
     <div className="my-16">
       <h1 className="text-center text-3xl font-bold">Add A New Job</h1>
       <form className="card-body" onSubmit={handleSubmit}>
-        <div className="flex gap-5">
-          <div className="w-1/2 space-y-5 ">
+        <div className="lg:flex gap-5">
+          <div className="lg:w-1/2 space-y-5 ">
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Email</span>
@@ -89,7 +93,7 @@ const AddJob = () => {
               />
             </div>
           </div>
-          <div className="w-1/2 space-y-5 ">
+          <div className="lg:w-1/2 space-y-5 ">
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Category</span>

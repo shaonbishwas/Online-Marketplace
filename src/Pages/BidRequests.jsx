@@ -7,24 +7,24 @@ const BidRequests = () => {
   const [requests, setRequests] = useState(null);
   const { user } = useAuth();
   useEffect(() => {
+    document.title = 'Worknest | Bid Requests'
     axios
-      .get(
-        `https://online-marketplace-zeta.vercel.app/api/v1/bid-requests?email=${user.email}`
-      )
+      .get(`http://localhost:5000/api/v1/bid-requests?email=${user.email}`)
       .then((res) => setRequests(res.data));
   }, [user.email]);
   if (!requests) {
     return (
-      <div className="md:min-h-[300px] flex justify-center items-center">
-        <p>no bid requests</p>
+      <div className="flex justify-center items-center min-h-[400px]">
+        <span className="loading loading-infinity loading-lg"></span>
       </div>
     );
   }
   return (
-    <div className="overflow-x-auto my-10 md:min-h-[300px] ">
+    <div className="overflow-x-auto my-10 md:min-h-[300px] md:max-w-[1400px] mx-auto md:w-[90%] border">
       <table className="table table-md table-pin-rows table-pin-cols font-bold  mx-auto">
-        <thead>
-          <tr>
+        <thead className="">
+          <tr >
+            <td>SL. NO.</td>
             <td>Job Title</td>
             <td>Buyer Email</td>
             <td>Deadline</td>
@@ -34,8 +34,8 @@ const BidRequests = () => {
           </tr>
         </thead>
         <tbody className="">
-          {requests?.map((bid) => (
-            <BidRequest key={bid._id} bid={bid}></BidRequest>
+          {requests?.map((bid, i) => (
+            <BidRequest key={bid._id} bid={bid} index={i}></BidRequest>
           ))}
         </tbody>
       </table>

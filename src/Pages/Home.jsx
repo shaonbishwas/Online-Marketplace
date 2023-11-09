@@ -12,26 +12,26 @@ const Home = () => {
   const [category, setCategory] = useState("");
   useEffect(() => {
     axios
-      .get(
-        `https://online-marketplace-zeta.vercel.app/api/v1/all-jobs?category=${category}`
-      )
+      .get(`http://localhost:5000/api/v1/all-jobs?category=${category}`)
       .then((res) => setJobs(res.data));
+    document.title = "Worknest | Home";
   }, [category]);
+  // console.log(import.meta.env.VITE_APIKEY)
+  
   return (
     <div>
-      <h1>dfd</h1>
       <div className="relative  h-screen ">
         <img src={banner} alt="" className="h-full w-full" />
-        <div className="absolute top-0 bg-[#000000a8] text-white h-full w-full ">
-          <div className="w-1/2 flex flex-col justify-center h-full ml-10 space-y-4 ">
-            <h1 className="text-6xl mb-5 font-bold">
+        <div className="absolute top-0 bg-[#0000006b] text-white h-full w-full">
+          <div className="lg:w-1/2 flex flex-col justify-center h-full ml-10 space-y-4 w-full ">
+            <h1 className="text-3xl md:text-6xl mb-5 font-bold">
               Chose the Right Job, Right Pathway, be silent
             </h1>
             <div className="ml-3">
               <input
                 type="text"
                 placeholder="Search any Job...."
-                className="py-2 pr-20 pl-2"
+                className="py-2 md:pr-20 pl-2"
               />
               <input type="submit" className="bg-[#14a800] py-2 px-2" />
             </div>
@@ -97,19 +97,19 @@ const Home = () => {
         </TabPanel>
       </Tabs>
 
-      <div className="h-screen relative mt-20">
-        <img src={banner2} alt="" className="h-full w-full" />
-        <div className="absolute bg-[#000000a5]  h-full w-full top-0 text-white ">
-          <div className="flex p-10 h-full md:max-w-[1400px] mx-auto">
-            <div className="w-1/2 flex flex-col justify-center">
-              <h1 className="text-8xl font-bold">Find talent your way</h1>
+      <div className="lg:h-screen lg:relative mt-20">
+        <img src={banner2} alt="" className="lg:h-full lg:w-full" />
+        <div className="lg:absolute  bg-[#000000a5]  h-full w-full top-0 text-white ">
+          <div className="flex flex-col md:flex-row p-10 h-full lg:max-w-[1400px] mx-auto">
+            <div className="lg:w-1/2 w-full flex flex-col justify-center">
+              <h1 className="text-4xl md:text-8xl font-bold">Find talent your way</h1>
               <p className="mt-8 text-lg font-semibold">
                 Work with the largest network of independent professionals and
                 get things done—from quick turnarounds to big transformations.
               </p>
             </div>
-            <div className="w-1/2 flex flex-col  items-center">
-              <div className="bg-[#14a800] p-5 rounded-lg w-[430px] space-y-6 my-auto cursor-pointer hover:bg-white hover:text-[#14a800]">
+            <div className="lg:w-1/2 w-full flex flex-col gap-10  items-center">
+              <div className="bg-[#14a800] p-5 rounded-lg lg:w-[430px] space-y-6 my-auto cursor-pointer hover:bg-white hover:text-[#14a800]">
                 <h1 className="text-4xl font-semibold">
                   Post a job and hire a pro
                 </h1>
@@ -117,7 +117,7 @@ const Home = () => {
                   Talent Marketplace -
                 </p>
               </div>
-              <div className="bg-[#14a800] p-5 rounded-lg w-[430px] space-y-6 my-auto cursor-pointer hover:text-[#14a800] hover:bg-white">
+              <div className="bg-[#14a800] p-5 rounded-lg lg:w-[430px] space-y-6 my-auto cursor-pointer hover:text-[#14a800] hover:bg-white">
                 <h1 className="text-4xl font-semibold">
                   Browse and buy projects
                 </h1>
@@ -125,7 +125,7 @@ const Home = () => {
                   Project Catalog -
                 </p>
               </div>
-              <div className="bg-[#14a800] p-5 rounded-lg w-[430px] space-y-6 my-auto cursor-pointer hover:text-[#14a800] hover:bg-white">
+              <div className="bg-[#14a800] p-5 rounded-lg lg:w-[430px] space-y-6 my-auto cursor-pointer hover:text-[#14a800] hover:bg-white">
                 <h1 className="text-4xl font-semibold">
                   Get advice from an <br /> industry expert
                 </h1>
@@ -138,7 +138,7 @@ const Home = () => {
 
       <div className="bg-[#f7f7f7] text-center pb-28 pt-20">
         <h1 className="mb-20 text-5xl font-bold">How it Works</h1>
-        <div className="flex md:max-w-[1400px] mx-auto gap-20">
+        <div className="flex flex-col lg:flex-row md:max-w-[1400px] mx-auto gap-20">
           <div className="flex flex-col items-center space-y-2">
             <IoReaderOutline className="text-7xl"></IoReaderOutline>
             <h1 className="text-3xl font-semibold">1. Create a Bid</h1>

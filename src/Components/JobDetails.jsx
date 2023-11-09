@@ -3,10 +3,14 @@ import { useLoaderData, useNavigate } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { useEffect } from "react";
 const JobDetails = () => {
   const navigate = useNavigate();
   const { user } = useAuth();
   const data = useLoaderData();
+  useEffect(() => {
+    document.title = "Worknest | Job Details";
+  }, []);
   const {
     _id,
     title,
@@ -35,7 +39,7 @@ const JobDetails = () => {
     };
     console.log("from submited", bid);
     axios
-      .post("https://online-marketplace-zeta.vercel.app/api/v1/submit-bid", bid)
+      .post("http://localhost:5000/api/v1/submit-bid", bid)
       .then(() => {
         Swal.fire({
           title: "Success!",
@@ -47,7 +51,7 @@ const JobDetails = () => {
       });
   };
   return (
-    <div className="my-20">
+    <div className="my-20 lg:max-w-[1400px] mx-auto">
       <h1 className="text-5xl font-semibold">{title}</h1>
       <span className="flex items-center mt-10">
         <FaLocationDot className="text-2xl text-blue-600"></FaLocationDot>

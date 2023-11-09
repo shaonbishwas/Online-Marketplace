@@ -1,9 +1,14 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import Swal from "sweetalert2";
+import { useEffect } from "react";
+// import axios from "axios";
 const Login = () => {
   const navigate = useNavigate();
   const { login, setLoading, googleLogin } = useAuth();
+  useEffect(()=>{
+    document.title ="Worknest | Login"
+  },[])
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -18,7 +23,11 @@ const Login = () => {
           icon: "success",
           confirmButtonText: "Continue",
         });
-
+        // axios.post(
+        //   "http://localhost:5000/jwt",
+        //   { email: user?.email },
+        //   { withCredentials: true }
+        // );
         navigate("/");
       })
       .catch((error) => {

@@ -15,19 +15,32 @@ export default function PostedJob({ job }) {
     expiryDate,
   } = job;
   const handleDelete = () => {
-    axios
-      .delete(
-        `https://online-marketplace-zeta.vercel.app/api/v1/delete-job/${_id}`
-      )
-      .then(() => {
-        window.location.reload();
-        Swal.fire({
-          title: "Success",
-          text: "Successfully deleted",
-          icon: "success",
-          confirmButtonText: "Continue",
-        });
-      });
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axios
+          .delete(`http://localhost:5000/api/v1/delete-job/${_id}`)
+          .then((res) => {
+            if (res.data.deletedCount > 0) {
+              Swal.fire({
+                title: "Success",
+                text: "Successfully deleted",
+                icon: "success",
+                confirmButtonText: "Continue",
+              });
+              window.location.reload();
+            }
+          });
+      }
+    });
+    
   };
   return (
     <>

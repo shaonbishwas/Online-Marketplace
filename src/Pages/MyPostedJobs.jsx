@@ -7,14 +7,20 @@ const MyPostedJobs = () => {
   const { user } = useAuth();
 
   useEffect(() => {
+    document.title = "Worknest | My posted jobs"
     axios
-      .get(
-        `https://online-marketplace-zeta.vercel.app/api/v1/all-jobs?email=${user.email}`
-      )
+      .get(`http://localhost:5000/api/v1/all-jobs?email=${user.email}`)
       .then((res) => setJobs(res.data));
   }, [user.email]);
+  if (!jobs) {
+    return (
+      <div className="flex justify-center items-center min-h-[400px]">
+        <span className="loading loading-infinity loading-lg"></span>
+      </div>
+    );
+  }
   return (
-    <div className="grid grid-cols-2 gap-10 my-20 md:max-w-[1400px] mx-auto">
+    <div className="grid lg:grid-cols-2 gap-10 my-20 md:max-w-[1400px] mx-auto">
       {jobs?.map((job) => (
         <PostedJob key={job._id} job={job}></PostedJob>
       ))}

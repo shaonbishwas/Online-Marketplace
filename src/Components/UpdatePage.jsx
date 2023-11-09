@@ -1,9 +1,13 @@
 import axios from "axios";
+import { useEffect } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 const UpdatePage = () => {
   const navigate = useNavigate();
   const job = useLoaderData();
+  useEffect(() => {
+    document.title = "Worknest | Update Job";
+  }, []);
   const {
     _id,
     title,
@@ -34,10 +38,7 @@ const UpdatePage = () => {
     };
     //   console.log(job)
     axios
-      .put(
-        `https://online-marketplace-zeta.vercel.app/api/v1/update-job/${_id}`,
-        job
-      )
+      .put(`http://localhost:5000/api/v1/update-job/${_id}`, job)
       .then(() => {
         Swal.fire({
           title: "Success!",
