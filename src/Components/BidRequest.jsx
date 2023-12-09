@@ -8,7 +8,7 @@ const BidRequest = ({ bid, index }) => {
   const handleAccept = () => {
     axios
       .put(
-        `http://localhost:5000/api/v1/status-update/${bid._id}?status=in progress`
+        `https://online-marketplace-zeta.vercel.app/api/v1/status-update/${bid._id}?status=in progress`
       )
       .then((res) => console.log(res.data));
     setStatus("in progress");
@@ -16,7 +16,7 @@ const BidRequest = ({ bid, index }) => {
   const handleReject = () => {
     axios
       .put(
-        `http://localhost:5000/api/v1/status-update/${bid._id}?status=rejected`
+        `https://online-marketplace-zeta.vercel.app/api/v1/status-update/${bid._id}?status=rejected`
       )
       .then((res) => console.log(res.data));
     setStatus("rejected");
@@ -60,7 +60,7 @@ const BidRequest = ({ bid, index }) => {
 
 BidRequest.propTypes = {
   bid: PropTypes.object,
-  index: PropTypes.number
+  index: PropTypes.number,
 };
 
 export default BidRequest;

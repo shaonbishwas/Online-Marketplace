@@ -22,11 +22,13 @@ export default function PostedJob({ job }) {
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!"
+      confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .delete(`http://localhost:5000/api/v1/delete-job/${_id}`)
+          .delete(
+            `https://online-marketplace-zeta.vercel.app/api/v1/delete-job/${_id}`
+          )
           .then((res) => {
             if (res.data.deletedCount > 0) {
               Swal.fire({
@@ -40,7 +42,6 @@ export default function PostedJob({ job }) {
           });
       }
     });
-    
   };
   return (
     <>

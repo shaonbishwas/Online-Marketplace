@@ -38,7 +38,10 @@ const UpdatePage = () => {
     };
     //   console.log(job)
     axios
-      .put(`http://localhost:5000/api/v1/update-job/${_id}`, job)
+      .put(
+        `https://online-marketplace-zeta.vercel.app/api/v1/update-job/${_id}`,
+        job
+      )
       .then(() => {
         Swal.fire({
           title: "Success!",

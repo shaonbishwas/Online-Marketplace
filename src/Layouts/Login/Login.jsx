@@ -6,9 +6,9 @@ import { useEffect } from "react";
 const Login = () => {
   const navigate = useNavigate();
   const { login, setLoading, googleLogin } = useAuth();
-  useEffect(()=>{
-    document.title ="Worknest | Login"
-  },[])
+  useEffect(() => {
+    document.title = "Worknest | Login";
+  }, []);
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -24,7 +24,7 @@ const Login = () => {
           confirmButtonText: "Continue",
         });
         // axios.post(
-        //   "http://localhost:5000/jwt",
+        //   "https://online-marketplace-zeta.vercel.app/jwt",
         //   { email: user?.email },
         //   { withCredentials: true }
         // );
@@ -41,27 +41,27 @@ const Login = () => {
       });
   };
 
-  const handleGoogleLogin = ()=>{
+  const handleGoogleLogin = () => {
     googleLogin()
-    .then(result => {
-      Swal.fire({
-        title: "Success",
-        text: `Successfully logged In with ${result.user.email}`,
-        icon: "success",
-        confirmButtonText: "Continue",
+      .then((result) => {
+        Swal.fire({
+          title: "Success",
+          text: `Successfully logged In with ${result.user.email}`,
+          icon: "success",
+          confirmButtonText: "Continue",
+        });
+        navigate("/");
+      })
+      .catch((error) => {
+        setLoading(false);
+        Swal.fire({
+          title: "Error!",
+          text: `${error.message}`,
+          icon: "error",
+          confirmButtonText: "Try Again",
+        });
       });
-      navigate("/");
-    })
-    .catch(error => {
-      setLoading(false);
-      Swal.fire({
-        title: "Error!",
-        text: `${error.message}`,
-        icon: "error",
-        confirmButtonText: "Try Again",
-      });
-    })
-  }
+  };
   return (
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col lg:flex-row-reverse">
@@ -109,7 +109,11 @@ const Login = () => {
               <h1>Or</h1>
               <hr className="border-1  w-full" />
             </div>
-            <button type="button" className="btn bg-[#4285f4] text-white rounded-full hover:text-black hover:border-[#4285f4]" onClick={handleGoogleLogin}>
+            <button
+              type="button"
+              className="btn bg-[#4285f4] text-white rounded-full hover:text-black hover:border-[#4285f4]"
+              onClick={handleGoogleLogin}
+            >
               Continue with Google
             </button>
             <div className="flex justify-center items-center gap-2">

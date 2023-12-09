@@ -11,10 +11,10 @@ const MyBids = () => {
     document.title = "Worknest | My Bids";
     axios
       .get(
-        `http://localhost:5000/api/v1/my-bids?email=${user.email}&sort=${sortMethod}`
+        `https://online-marketplace-zeta.vercel.app/api/v1/my-bids?email=${user.email}&sort=${sortMethod}`
       )
       .then((res) => setBids(res.data));
-  }, [user.email,sortMethod]);
+  }, [user.email, sortMethod]);
   // console.log(bids);
   if (!bids) {
     return (
@@ -27,10 +27,13 @@ const MyBids = () => {
     setSortmethod(event.target.value);
   };
   // console.log(sortMethod)
-  if (bids.length === 0) {
+  if (bids?.length === 0) {
     return (
       <div className="flex justify-center items-center min-h-[400px]">
-        <span className="text-2xl font-bold text-gray-400"> No Bids Available</span>
+        <span className="text-2xl font-bold text-gray-400">
+          {" "}
+          No Bids Available
+        </span>
       </div>
     );
   }
@@ -38,7 +41,12 @@ const MyBids = () => {
     <>
       <div className="md:w-[90%] lg:max-w-[1400px] mx-auto flex gap-5">
         <h1>Filter :</h1>
-        <select onChange={handleSelectChange} name="" id="" className="border-2">
+        <select
+          onChange={handleSelectChange}
+          name=""
+          id=""
+          className="border-2"
+        >
           <option value="">Default</option>
           <option value="1">Active works</option>
           <option value="-1">Offline works</option>

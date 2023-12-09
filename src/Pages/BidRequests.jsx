@@ -7,9 +7,11 @@ const BidRequests = () => {
   const [requests, setRequests] = useState(null);
   const { user } = useAuth();
   useEffect(() => {
-    document.title = 'Worknest | Bid Requests'
+    document.title = "Worknest | Bid Requests";
     axios
-      .get(`http://localhost:5000/api/v1/bid-requests?email=${user.email}`)
+      .get(
+        `https://online-marketplace-zeta.vercel.app/api/v1/bid-requests?email=${user.email}`
+      )
       .then((res) => setRequests(res.data));
   }, [user.email]);
   if (!requests) {
@@ -19,10 +21,13 @@ const BidRequests = () => {
       </div>
     );
   }
-  if (requests.length === 0) {
+  if (requests?.length === 0) {
     return (
       <div className="flex justify-center items-center min-h-[400px]">
-        <span className="text-2xl font-bold text-gray-400 "> No Requests Available</span>
+        <span className="text-2xl font-bold text-gray-400 ">
+          {" "}
+          No Requests Available
+        </span>
       </div>
     );
   }
@@ -30,7 +35,7 @@ const BidRequests = () => {
     <div className="overflow-x-auto my-10 md:min-h-[300px] md:max-w-[1400px] mx-auto md:w-[90%] border">
       <table className="table table-md table-pin-rows table-pin-cols font-bold  mx-auto">
         <thead className="">
-          <tr >
+          <tr>
             <td>SL. NO.</td>
             <td>Job Title</td>
             <td>Buyer Email</td>

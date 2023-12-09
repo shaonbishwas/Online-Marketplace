@@ -7,7 +7,7 @@ const MyBid = ({ bid }) => {
   const handleComplete = () => {
     axios
       .put(
-        `http://localhost:5000/api/v1/status-update/${bid._id}?status=complete`
+        `https://online-marketplace-zeta.vercel.app/api/v1/status-update/${bid._id}?status=complete`
       )
       .then((res) => console.log(res.data));
     setStatus("complete");

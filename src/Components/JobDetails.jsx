@@ -39,7 +39,7 @@ const JobDetails = () => {
     };
     console.log("from submited", bid);
     axios
-      .post("http://localhost:5000/api/v1/submit-bid", bid)
+      .post("https://online-marketplace-zeta.vercel.app/api/v1/submit-bid", bid)
       .then(() => {
         Swal.fire({
           title: "Success!",

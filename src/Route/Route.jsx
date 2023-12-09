@@ -68,7 +68,9 @@ const router = createBrowserRouter([
         ),
         errorElement: <ErrorElement></ErrorElement>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/api/v1/jobs/${params.id}`),
+          fetch(
+            `https://online-marketplace-zeta.vercel.app/api/v1/jobs/${params.id}`
+          ),
       },
       {
         path: "updatejob/:id",
@@ -79,7 +81,9 @@ const router = createBrowserRouter([
         ),
         errorElement: <ErrorElement></ErrorElement>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/api/v1/jobs/${params.id}`),
+          fetch(
+            `https://online-marketplace-zeta.vercel.app/api/v1/jobs/${params.id}`
+          ),
       },
     ],
   },

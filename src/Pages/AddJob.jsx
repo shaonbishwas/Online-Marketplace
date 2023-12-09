@@ -7,9 +7,9 @@ import { useEffect } from "react";
 const AddJob = () => {
   const navigate = useNavigate();
   const { user } = useAuth();
-  useEffect(()=>{
-    document.title = 'Worknest | Add Job'
-  },[])
+  useEffect(() => {
+    document.title = "Worknest | Add Job";
+  }, []);
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -37,7 +37,7 @@ const AddJob = () => {
       proposalsCount: 0,
     };
     axios
-      .post("http://localhost:5000/api/v1/add-job", job)
+      .post("https://online-marketplace-zeta.vercel.app/api/v1/add-job", job)
       .then(() => {
         Swal.fire({
           title: "Success!",

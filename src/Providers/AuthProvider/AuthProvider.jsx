@@ -30,25 +30,25 @@ const AuthProvider = ({ children }) => {
     return signOut(auth);
   };
   const googleLogin = () => {
-    setLoading(true)
+    setLoading(true);
     return signInWithPopup(auth, provider);
   };
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      setUser(user)
-      setLoading(false)
+      setUser(user);
+      setLoading(false);
       // if (user) {
       //   setUser(user);
       //   setLoading(false);
       //   console.log(user);
       //   // axios.post(
-      //   //   "http://localhost:5000/jwt",
+      //   //   "https://online-marketplace-zeta.vercel.app/jwt",
       //   //   { email: user.email },
       //   //   { withCredentials: true }
       //   // );
       // } else {
       //   setUser(null);
-      //   // axios.get("http://localhost:5000/deletecookie", {
+      //   // axios.get("https://online-marketplace-zeta.vercel.app/deletecookie", {
       //   //   withCredentials: true,
       //   // });
       // }

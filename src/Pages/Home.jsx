@@ -13,7 +13,9 @@ const Home = () => {
   const [category, setCategory] = useState("");
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/v1/all-jobs?category=${category}`)
+      .get(
+        `https://online-marketplace-zeta.vercel.app/api/v1/all-jobs?category=${category}`
+      )
       .then((res) => setJobs(res.data));
     document.title = "Worknest | Home";
   }, [category]);
@@ -60,12 +62,12 @@ const Home = () => {
                 <span className="border-2 rounded-full px-2">
                   Web Development
                 </span>
-              <span className="border-2 rounded-full px-2">
-                Graphics Design
-              </span>
-              <span className="border-2 rounded-full px-2">
-                Digital Marketing
-              </span>
+                <span className="border-2 rounded-full px-2">
+                  Graphics Design
+                </span>
+                <span className="border-2 rounded-full px-2">
+                  Digital Marketing
+                </span>
               </motion.div>
             </div>
           </div>
